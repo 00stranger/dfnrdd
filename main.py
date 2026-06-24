@@ -3,6 +3,7 @@ from pyspark.sql.types import StructType, StructField, StringType, IntegerType, 
 from pyspark.sql import Row
 from pyspark.sql.functions import col, lit
 from pyspark.sql.types import ArrayType
+from covidAnalysis import covid_data_analysis
 
 def ecomm(spark, sdata):
 
@@ -105,3 +106,5 @@ if __name__ == "__main__":
  ]
     nestCols(dataCol)
 
+    path_to_covidcase= "file:///home/takeon/pycharmprojects/CovidCases.csv"
+    covid_data_analysis(spark,path_to_covidcase)
